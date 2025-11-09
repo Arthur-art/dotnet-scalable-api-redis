@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "I/Bd8ZrUuRw=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Arthur Teixeira\\Documents\\repository\\github\\ProductApi\\ProductApi\\ProductApi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Arthur Teixeira\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.10\\microsoft.aspnetcore.openapi.9.0.10.nupkg.sha512",
+    "C:\\Users\\Arthur Teixeira\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512"
+  ],
+  "logs": []
+}
