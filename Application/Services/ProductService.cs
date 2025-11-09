@@ -18,21 +18,23 @@ public class ProductService
 
     public async Task<Product?> GetProductAsync(int id)
     {
-
         /* Primeiro tenta ler do cache (GetStringAsync).
 
         Se não encontrar, busca no repositório.
 
         Depois armazena no Redis por 5 minutos (com expiração absoluta). */
 
-        
-        var cacheKey = $"product:{id}";
+        var cacheKey = GetCacheKey(id);
         var cachedProduct = await _cache.GetStringAsync(cacheKey);
 
         if (cachedProduct is not null)
         {
             Console.WriteLine($"[CACHE HIT] Product {id} loaded from Redis.");
-            return JsonSerializer.Deserialize<Product>(cachedProduct);
+            var productFromCache = JsonSerializer.Deserialize<Product>(cachedProduct);
+            if (productFromCache is not null)
+            {
+                return productFromCache;
+            }
         }
 
         Console.WriteLine($"[CACHE MISS] Fetching Product {id} from repository...");
@@ -51,5 +53,41 @@ public class ProductService
 
         return product;
     }
+
+    public async Task<IReadOnlyList<Product>> GetProductsAsync()
+    {
+        return await _repository.GetAllAsync();
+    }
+
+    public async Task<Product> CreateProductAsync(Product product)
+    {
+        var created = await _repository.AddAsync(product);
+        await _cache.RemoveAsync(GetCacheKey(created.Id));
+        return created;
+    }
+
+    public async Task<bool> UpdateProductAsync(Product product)
+    {
+        var updated = await _repository.UpdateAsync(product);
+        if (updated)
+        {
+            await _cache.RemoveAsync(GetCacheKey(product.Id));
+        }
+
+        return updated;
+    }
+
+    public async Task<bool> DeleteProductAsync(int id)
+    {
+        var deleted = await _repository.DeleteAsync(id);
+        if (deleted)
+        {
+            await _cache.RemoveAsync(GetCacheKey(id));
+        }
+
+        return deleted;
+    }
+
+    private static string GetCacheKey(int id) => $"product:{id}";
 }
 
