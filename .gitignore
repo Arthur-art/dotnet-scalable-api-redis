@@ -1,0 +1,30 @@
+# Build results
+bin/
+obj/
+
+# Tooling
+.vs/
+.vscode/
+
+# User-specific
+*.user
+*.suo
+
+# Logs
+*.log
+
+# Rider / JetBrains
+.idea/
+
+# NuGet
+*.nupkg
+*.snupkg
+packages/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Publish profiles
+Properties/PublishProfiles/
+

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Arthur Teixeira\\Documents\\repository\\github\\ProductApi\\ProductApi\\ProductApi.csproj": {}
+    "C:\\Users\\Arthur Teixeira\\Documents\\repository\\github\\ProductApi\\ProductApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Arthur Teixeira\\Documents\\repository\\github\\ProductApi\\ProductApi\\ProductApi.csproj": {
+    "C:\\Users\\Arthur Teixeira\\Documents\\repository\\github\\ProductApi\\ProductApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Arthur Teixeira\\Documents\\repository\\github\\ProductApi\\ProductApi\\ProductApi.csproj",
+        "projectUniqueName": "C:\\Users\\Arthur Teixeira\\Documents\\repository\\github\\ProductApi\\ProductApi.csproj",
         "projectName": "ProductApi",
-        "projectPath": "C:\\Users\\Arthur Teixeira\\Documents\\repository\\github\\ProductApi\\ProductApi\\ProductApi.csproj",
+        "projectPath": "C:\\Users\\Arthur Teixeira\\Documents\\repository\\github\\ProductApi\\ProductApi.csproj",
         "packagesPath": "C:\\Users\\Arthur Teixeira\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Arthur Teixeira\\Documents\\repository\\github\\ProductApi\\ProductApi\\obj\\",
+        "outputPath": "C:\\Users\\Arthur Teixeira\\Documents\\repository\\github\\ProductApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
